@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS reservation (
 USE hotelino;
 
 -- Test Data
+DELETE FROM chambre;
 INSERT INTO chambre (numero, capacite, prix, statut) VALUES
 (101, 1, 450.00, 0),
 (104, 2, 650.00, 0),
