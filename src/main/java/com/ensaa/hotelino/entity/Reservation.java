@@ -1,5 +1,7 @@
 package com.ensaa.hotelino.entity;
 
+import com.ensaa.hotelino.dao.ChambreDAO;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -14,14 +16,14 @@ public class Reservation {
     }
 
     private Long id;
+    private Long clientId;
+    private Long chambreId;
     private LocalDate dateCreation;
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private int nbPersonnes;
     private StatutReservation statut;
     private double montantTotal;
-    private Client client;
-    private Chambre chambre;
     private List<Paiement> paiements = new ArrayList<>();
 
     public Reservation() {
@@ -92,20 +94,20 @@ public class Reservation {
         this.montantTotal = montantTotal;
     }
 
-    public Client getClient() {
-        return client;
+    public Long getChambreId() {
+        return chambreId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setChambreId(Long chambreId) {
+        this.chambreId = chambreId;
     }
 
-    public Chambre getChambre() {
-        return chambre;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setChambre(Chambre chambre) {
-        this.chambre = chambre;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public List<Paiement> getPaiements() {
@@ -117,9 +119,8 @@ public class Reservation {
     }
 
     public double calculerMontant() {
-        long nuits = ChronoUnit.DAYS.between(dateDebut, dateFin);
-        montantTotal = nuits * chambre.getPrixParNuit();
-        return montantTotal;
+        //TODO
+        return 0;
     }
 
     public void annuler() {

@@ -25,7 +25,6 @@ public class Chambre {
     private int capacite;
     private double prixParNuit;
     private StatutChambre statut;
-    private List<Equipement> equipements = new ArrayList<>();
     private List<Reservation> reservations = new ArrayList<>();
 
     public Chambre() {
@@ -94,14 +93,6 @@ public class Chambre {
 
     public void setStatut(StatutChambre statut) {
         this.statut = statut;
-    }
-
-    public List<Equipement> getEquipements() {
-        return equipements;
-    }
-
-    public void setEquipements(List<Equipement> equipements) {
-        this.equipements = equipements;
     }
 
     public List<Reservation> getReservations() {
