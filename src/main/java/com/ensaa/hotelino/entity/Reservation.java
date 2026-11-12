@@ -6,11 +6,9 @@ public class Reservation {
     public int id;
     public int idClient;
     public int idChambre;
+    public double montant;
     public LocalDate dateArrivee;
     public LocalDate dateDepart;
-    public double montant;
-    public String clientNom;
-    public String chambreNumero;
     public StatutReservation statut;
 
     public enum StatutReservation {

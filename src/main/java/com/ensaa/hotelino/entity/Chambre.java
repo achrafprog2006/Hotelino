@@ -3,7 +3,11 @@ package com.ensaa.hotelino.entity;
 public class Chambre {
     public int id;
     public int numero;
-    public double prix;
     public int capacite;
-    public String statut;
+    public double prix;
+    public StatutChambre statut;
+
+    public enum StatutChambre {
+        DISPONIBLE, RESERVEE
+    }
 }
